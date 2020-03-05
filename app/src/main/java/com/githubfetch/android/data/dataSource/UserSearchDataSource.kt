@@ -1,10 +1,10 @@
-package com.githubfetch.android.data
+package com.githubfetch.android.data.dataSource
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
 import com.githubfetch.android.api.GithubService
 import com.githubfetch.android.api.NetworkState
-import com.githubfetch.android.api.SearchResponse
+import com.githubfetch.android.api.response.SearchResponse
 import com.githubfetch.android.api.enum.Status
 import com.githubfetch.android.data.model.User
 import retrofit2.Call

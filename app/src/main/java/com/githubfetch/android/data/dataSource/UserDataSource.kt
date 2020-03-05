@@ -1,4 +1,4 @@
-package com.githubfetch.android.data
+package com.githubfetch.android.data.dataSource
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource

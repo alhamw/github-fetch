@@ -32,6 +32,8 @@ class MainViewModel constructor(application: Application) : AndroidViewModel(app
     }
 
     init {
+        searchQuery.postValue("")
+
         _pagingUsers = Transformations.switchMap(searchResult) {
             it.pagedList
         }

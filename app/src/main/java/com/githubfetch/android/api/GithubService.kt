@@ -1,5 +1,6 @@
 package com.githubfetch.android.api
 
+import com.githubfetch.android.api.response.SearchResponse
 import com.githubfetch.android.data.model.User
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

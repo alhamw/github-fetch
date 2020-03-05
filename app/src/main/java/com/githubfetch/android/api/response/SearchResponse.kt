@@ -1,4 +1,4 @@
-package com.githubfetch.android.api
+package com.githubfetch.android.api.response
 
 import com.githubfetch.android.data.model.User
 import com.google.gson.annotations.SerializedName

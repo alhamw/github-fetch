@@ -5,19 +5,22 @@ import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.githubfetch.android.api.GithubService
 import com.githubfetch.android.api.Result
-import com.githubfetch.android.data.UserDataSourceFactory
-import com.githubfetch.android.data.UserSearchDataSourceFactory
+import com.githubfetch.android.data.dataSource.factory.UserDataSourceFactory
+import com.githubfetch.android.data.dataSource.factory.UserSearchDataSourceFactory
 import com.githubfetch.android.data.model.User
 
 class UserRepository(val service: GithubService) {
-    private val PAGE_SIZE = 10
+    private val PAGE_SIZE = 12
     private val config = PagedList.Config.Builder()
         .setEnablePlaceholders(false)
         .setPageSize(PAGE_SIZE)
         .build()
 
     fun getUsers(): Result<User> {
-        val userDataSourceFactory = UserDataSourceFactory(service)
+        val userDataSourceFactory =
+            UserDataSourceFactory(
+                service
+            )
 
         return Result(
             LivePagedListBuilder(userDataSourceFactory, config).build(),
@@ -28,7 +31,11 @@ class UserRepository(val service: GithubService) {
     }
 
     fun searchUser(query: String): Result<User> {
-        val userSearchDataSourceFactory = UserSearchDataSourceFactory(query, service)
+        val userSearchDataSourceFactory =
+            UserSearchDataSourceFactory(
+                query,
+                service
+            )
 
         return Result(
             LivePagedListBuilder(userSearchDataSourceFactory, config).build(),
